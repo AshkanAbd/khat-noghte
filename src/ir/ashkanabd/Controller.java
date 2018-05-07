@@ -44,6 +44,8 @@ public class Controller {
     private Pane errorPane, startPane;
     @FXML
     private GridPane mainPane;
+    @FXML
+    private Button resetBtn;
 
     private List<Ellipse> nodeList;
     private List<Label> labelList;
@@ -63,16 +65,22 @@ public class Controller {
             e.setVisible(true);
             e.setOnMouseClicked(this::userSelect);
         }
+        resetBtn.setOnMouseClicked(this::resetRequest);
+    }
+
+    private void resetRequest(MouseEvent event){
+        main.resetApp();
     }
 
     private void userSelect(MouseEvent event) {
         new Timer().schedule(new TimerTask() {
             @Override
             public void run() {
-
                 if (Main.start) {
                     Ellipse e = (Ellipse) event.getSource();
-                    onReceive.received(e.getId().substring(4, 5) + "_" + e.getId().substring(5), Main.aiID);
+                    if ((e.getFill().equals(Paint.valueOf(Color.ALICEBLUE.toString())))){
+                        onReceive.received(e.getId().substring(4, 5) + "_" + e.getId().substring(5), Main.aiID);
+                    }
                 }
             }
         },500);
@@ -145,6 +153,7 @@ public class Controller {
 
     public void handle(MouseEvent event) {
         startPane.setVisible(false);
+        resetBtn.setDisable(false);
         Main.start = true;
         main.startTimer();
         onReceive.start();

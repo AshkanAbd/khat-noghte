@@ -9,14 +9,14 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Ellipse?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="620" prefWidth="720" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="670" prefWidth="720" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
     <Label fx:id="player1" alignment="CENTER" layoutX="30" layoutY="20" prefHeight="44" prefWidth="179" style="-fx-background-color: mediumblue ; -fx-padding: 20px; -fx-font-family: sans-serif ; -fx-font-size: 17px" textFill="white" />
     <Label fx:id="player1Score" alignment="CENTER" layoutX="220" layoutY="20" prefHeight="44" prefWidth="67" style="-fx-font-family: sans-serif ; -fx-padding: 20px ; -fx-background-color: mediumblue ; -fx-font-size: 17px" text="0" textFill="white" />
     <Label fx:id="player2" alignment="CENTER" layoutX="510" layoutY="20" prefHeight="44" prefWidth="179" style="-fx-background-color: red ; -fx-padding: 20px; -fx-font-family: sans-serif; -fx-font-size: 17px" textFill="white" />
     <Label fx:id="player2Score" alignment="CENTER" layoutX="426" layoutY="20" prefHeight="44" prefWidth="67" style="-fx-font-family: sans-serif ; -fx-padding: 20px ; -fx-background-color: red ; -fx-font-size: 17px" text="0" textFill="white" />
     <Label fx:id="time" alignment="CENTER" layoutX="315" layoutY="20" prefHeight="40" prefWidth="90" style="-fx-font-family: sans-serif ; -fx-padding: 20px ; -fx-background-color: greenyellow ; -fx-font-size: 17px" textFill="crimson" />
 
-    <GridPane layoutX="125.0" layoutY="100.0" prefHeight="450.0" prefWidth="450.0" fx:id="mainPane" style="-fx-background-color: aliceblue">
+    <GridPane fx:id="mainPane" layoutX="125.0" layoutY="100.0" prefHeight="450.0" prefWidth="450.0" style="-fx-background-color: aliceblue">
         <columnConstraints>
             <ColumnConstraints halignment="CENTER" minWidth="55.0" prefWidth="55.0" />
             <ColumnConstraints halignment="CENTER" minWidth="55.0" prefWidth="55.0" />
@@ -131,4 +131,5 @@
 
     <Button fx:id="startPaneOK" alignment="CENTER" layoutY="150" prefHeight="50" prefWidth="400" style="-fx-background-color: #adef2f;-fx-font-family: sans-serif;-fx-font-size: 20px" text="OK" textFill="black" />
 </Pane>
+   <Button fx:id="resetBtn" disable="true" layoutX="299.0" layoutY="616.0" prefHeight="30" prefWidth="150" text="Restart" />
 </Pane>

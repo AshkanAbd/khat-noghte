@@ -92,7 +92,7 @@ public class Game implements OnReceive {
                         public void run() {
                             startGame();
                         }
-                    }, 500);
+                    }, 1500);
                 } else {
                     System.out.println("Player scored");
                 }
@@ -137,7 +137,7 @@ public class Game implements OnReceive {
             Game.this.client++;
             return false;
         } else {
-            clientQueue.poll();
+            clientQueue.clear();
             return true;
         }
 

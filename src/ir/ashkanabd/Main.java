@@ -15,6 +15,7 @@ public class Main extends Application implements Update {
     public static int aiID;
 
     private Controller controller;
+    private Stage primaryStage;
 
 //    private MySocket mySocket;
 
@@ -22,10 +23,11 @@ public class Main extends Application implements Update {
     public void start(Stage primaryStage) throws Exception {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("sample.fxml"));
         controller = new Controller(this);
+        this.primaryStage = primaryStage;
         loader.setController(controller);
         Parent root = loader.load();
-        Scene myScene = new Scene(root, 720, 620);
-        primaryStage.setTitle("JAshnvare harekat");
+        Scene myScene = new Scene(root, 720, 670);
+        primaryStage.setTitle("Jashnvare harekat");
         primaryStage.setScene(myScene);
         primaryStage.setResizable(false);
         primaryStage.show();
@@ -44,6 +46,17 @@ public class Main extends Application implements Update {
         }*/
     }
 
+    void resetApp(){
+        primaryStage.close();
+        primaryStage = new Stage();
+        Platform.runLater(()->{
+            try {
+                new Main().start(primaryStage);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+    }
 
     public static void main(String[] args) {
         launch(args);
